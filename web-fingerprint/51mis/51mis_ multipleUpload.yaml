@@ -17,6 +17,5 @@ http:
   matchers:
   - type: word
     words:
-    - 'include/js/ldAjax.js'
+    - include/js/ldajax.js
     case-insensitive: true
-

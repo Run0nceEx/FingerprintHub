@@ -7,7 +7,7 @@ info:
   metadata:
     fofa-query:
     - app="泛微--E-mobile"
-    product: E-Mobile
+    product: e-mobile
     shodan-query:
     - ecology_jsessionid
     vendor: weaver
@@ -19,7 +19,7 @@ http:
   matchers:
   - type: word
     words:
-    - 'Weaver E-mobile'
-    - 'E-Mobile&nbsp;" && body="action=\"/verifyLogin.do'
-    - 'window.apiprifix = \"/emp\";" && title="移动管理平台")'
+    - weaver e-mobile
+    - e-mobile&nbsp;" && body="action=\"/verifylogin.do
+    - window.apiprifix = \"/emp\";" && title="移动管理平台")
     case-insensitive: true

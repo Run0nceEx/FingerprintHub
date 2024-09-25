@@ -19,8 +19,8 @@ http:
   matchers:
   - type: word
     words:
-    - '/general/login/view//images/updateLoad.gif'
-    - 'szFeatures'
-    - 'eoffice'
-    - 'Server: couchdb'
+    - /general/login/view//images/updateload.gif
+    - szfeatures
+    - eoffice
+    - 'server: couchdb'
     case-insensitive: true

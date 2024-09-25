@@ -17,4 +17,5 @@ http:
   matchers:
   - type: word
     words:
-    - js39/flyrise.stopBackspace.js
+    - js39/flyrise.stopbackspace.js
+    case-insensitive: true
