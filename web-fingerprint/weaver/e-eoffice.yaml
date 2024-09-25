@@ -1,0 +1,26 @@
+id: eoffice
+info:
+  name: eoffice
+  author: runonceex
+  tags: detect,tech,weaver,eoffice
+  severity: info
+  metadata:
+    fofa-query:
+    - app="泛微--E-mobile"
+    product: eoffice
+    shodan-query:
+    - ecology_jsessionid
+    vendor: weaver
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - '/general/login/view//images/updateLoad.gif'
+    - 'szFeatures'
+    - 'eoffice'
+    - 'Server: couchdb'
+    case-insensitive: true

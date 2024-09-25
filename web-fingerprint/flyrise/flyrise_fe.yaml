@@ -1,0 +1,20 @@
+id: flyrise_fe
+info:
+  name: 飞企互联-FE业务协作平台
+  author: cn-kali-team
+  tags: detect,tech,flyrise_fe
+  severity: info
+  metadata:
+    product: flyrise_fe
+    shodan-query:
+    - title:"flexnet"
+    vendor: flyrise
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - js39/flyrise.stopBackspace.js

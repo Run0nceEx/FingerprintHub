@@ -1,0 +1,22 @@
+id: wannneg-applet
+info:
+  name:wannneg-applet
+  author: runonceex
+  tags: wannneg,tech,wannneg-applet
+  severity: info
+  metadata:
+    fofa-query:
+    - body="/com/css/head_foot.css" || body="/com/css/iconfont"
+    product:wannneg-applet
+    vendor: wannneg
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - /com/css/head_foot.css
+    - /com/css/iconfont
+    case-insensitive: true

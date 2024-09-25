@@ -1,0 +1,25 @@
+id: e-mobile
+info:
+  name: e-mobile
+  author: cn-kali-team
+  tags: detect,tech,weaver,e-mobile
+  severity: info
+  metadata:
+    fofa-query:
+    - app="泛微--E-mobile"
+    product: E-Mobile
+    shodan-query:
+    - ecology_jsessionid
+    vendor: weaver
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - 'Weaver E-mobile'
+    - 'E-Mobile&nbsp;" && body="action=\"/verifyLogin.do'
+    - 'window.apiprifix = \"/emp\";" && title="移动管理平台")'
+    case-insensitive: true
