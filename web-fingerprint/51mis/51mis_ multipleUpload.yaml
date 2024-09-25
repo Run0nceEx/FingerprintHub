@@ -1,0 +1,22 @@
+id: 51mis_ multipleUpload
+info:
+  name: 灵当CRM
+  author: cn-kali-team
+  tags: detect,tech,51mis
+  severity: info
+  metadata:
+    fofa-query:
+    - title="51mis"
+    product: 51mis
+    vendor: 51mis
+    verified: true
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - 'include/js/ldAjax.js'
+    case-insensitive: true
+
