@@ -14,7 +14,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.repository == '0x727/FingerprintHub'
+    if: github.repository == 'Run0nceEx/FingerprintHub'
     steps:
       - name: Install Rust
         uses: actions-rs/toolchain@v1
