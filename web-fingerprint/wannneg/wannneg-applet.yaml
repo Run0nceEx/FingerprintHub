@@ -1,13 +1,13 @@
 id: wannneg-applet
 info:
-  name:wannneg-applet
+  name: wannneg-applet
   author: runonceex
   tags: wannneg,tech,wannneg-applet
   severity: info
   metadata:
     fofa-query:
     - body="/com/css/head_foot.css" || body="/com/css/iconfont"
-    product:wannneg-applet
+    product: wannneg-applet
     vendor: wannneg
     verified: true
 http:
